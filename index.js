@@ -3,8 +3,6 @@
 import chalk from "chalk";
 import inquirer from "inquirer";
 import { exec } from "child_process";
-import path from "path";
-import { fileURLToPath } from "url";
 import { createSpinner } from "nanospinner";
 
 const spinner = createSpinner();
@@ -19,7 +17,7 @@ const centerText = (text) => {
 
 const cloneRepo = (branch, fileName) => {
 	return new Promise((resolve, reject) => {
-		console.log(chalk.yellow("installing fhf-linkedlist..."));
+		console.log(chalk.yellow("Installing fhf-linkedlist..."));
 		spinner.start();
 
 		exec(
