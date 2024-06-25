@@ -19,7 +19,7 @@ const centerText = (text) => {
 
 const cloneRepo = (branch, fileName) => {
 	return new Promise((resolve, reject) => {
-		console.log(chalk.yellow("Cloning repository..."));
+		console.log(chalk.yellow("installing fhf-linkedlist..."));
 		spinner.start();
 
 		exec(
