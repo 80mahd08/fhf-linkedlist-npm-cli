@@ -78,11 +78,11 @@ const runCLI = async () => {
 
 			await cloneRepo(branch, fileName);
 			console.log(`
-				new you can run the following command:
-					${chalk.bgGreen(`cd ${fileName}`)}
-				    ${chalk.bgGreen(`npm install`)}
-                    ${chalk.bgGreen(`npm run dev`)}
-                to start your app.
+new you can run the following command:
+	${chalk.bgGreen(`cd ${fileName}`)}
+    ${chalk.bgGreen(`npm install`)}
+    ${chalk.bgGreen(`npm run dev`)}
+to start your app.
 			`);
 		}
 	} catch (error) {
