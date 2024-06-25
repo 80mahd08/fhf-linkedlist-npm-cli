@@ -40,30 +40,6 @@ const cloneRepo = (branch, fileName) => {
 	});
 };
 
-const installDependencies = (destinationPath) => {
-	return new Promise((resolve, reject) => {
-		console.log(chalk.green("Installing dependencies..."));
-		spinner.start();
-
-		// Change the current working directory to the destination path
-		process.chdir(destinationPath);
-
-		exec("npm install", (err, stdout, stderr) => {
-			spinner.stop();
-			if (err) {
-				reject(
-					new Error(
-						`Error occurred while installing dependencies: ${err.message}`
-					)
-				);
-			} else {
-				console.log(chalk.green("Dependencies installed successfully"));
-				resolve();
-			}
-		});
-	});
-};
-
 const chooseFramework = async () => {
 	const { framework } = await inquirer.prompt({
 		type: "list",
@@ -100,13 +76,14 @@ const runCLI = async () => {
 			const branch = `vite-${template.toLowerCase().replace(" ", "-")}`;
 			const fileName = process.argv[2] || "fhf-linkedList";
 
-			// Use __dirname to get the current directory
-			const __filename = fileURLToPath(import.meta.url);
-			const __dirname = path.dirname(__filename);
-			const destinationPath = path.resolve(__dirname, fileName);
-
 			await cloneRepo(branch, fileName);
-			await installDependencies(destinationPath);
+			console.log(`
+				new you can run the following command:
+					${chalk.bgGreen(`cd ${fileName}`)}
+				    ${chalk.bgGreen(`npm install`)}
+                    ${chalk.bgGreen(`npm run dev`)}
+                to start your app.
+			`);
 		}
 	} catch (error) {
 		console.error(chalk.red("An error occurred:", error.message));
