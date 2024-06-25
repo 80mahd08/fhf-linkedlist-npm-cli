@@ -7,10 +7,31 @@
 	"scripts": {
 		"start": "node ."
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"description": "",
+	"bugs": {
+		"url": "https://github.com/80mahd08/fhf-linkedlist-npm-cli/issues"
+	},
+	"homepage": "https://github.com/80mahd08/fhf-linkedlist-npm-cli#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/80mahd08/fhf-linkedlist-npm-cli"
+	},
+	"keywords": [
+		"cli",
+		"linkedlist",
+		"vite",
+		"next.js",
+		"create",
+		"fhf-linkedlist",
+		"wasm",
+		"webassembly",
+		"javascript",
+		"typescript",
+		"react",
+		"vanilla"
+	],
+	"author": "Mahdi Amari",
+	"license": "MIT",
+	"description": "CLI to create a FHF linked list app with either Vite or Next.js",
 	"dependencies": {
 		"chalk": "^5.3.0",
 		"chalk-animation": "^2.0.3",
