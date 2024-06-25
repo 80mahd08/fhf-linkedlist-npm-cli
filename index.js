@@ -24,6 +24,7 @@ const cloneRepo = (branch, fileName) => {
 
 		exec(
 			`git clone -b ${branch} https://github.com/80mahd08/fhf-linkedList.git ${fileName}`,
+			{ shell: true },
 			(err, stdout, stderr) => {
 				spinner.stop();
 				if (err) {
@@ -46,7 +47,10 @@ const installDependencies = (destinationPath) => {
 		console.log(chalk.green("Installing dependencies..."));
 		spinner.start();
 
-		const childProcess = exec(installCommand, { cwd: destinationPath });
+		const childProcess = exec(installCommand, {
+			shell: true,
+			cwd: destinationPath,
+		});
 		// Event handler for stdout data
 		childProcess.stdout.on("data", (data) => {
 			let out = data.toString().replace(/npm WARN/g, chalk.yellow("npm WARN"));
